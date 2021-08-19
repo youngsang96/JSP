@@ -1,3 +1,4 @@
+<%@page import="el.Member"%>
 <%@page import="el.Thermometer"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -10,7 +11,9 @@
 <body>
 <%
 Thermometer th = new Thermometer();
+Member m = new Member("홍길동", 100);
 request.setAttribute("t",th);
+request.setAttribute("m",m);
 %>
 
 ${t.setCelsius('서울',27.3) }
@@ -18,5 +21,7 @@ ${t.setCelsius('서울',27.3) }
 <br>${t}<br>
 <hr>
 ${t.info } // ${t.name }
+<hr>
+${m.name }
 </body>
 </html>
